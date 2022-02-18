@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo-javascript.svg" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgba(15, 15, 248, 0.5);
+    font: normal 15pt arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.39);
+}
+
+div {
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    </style>
+    <title>Ano Bissexto</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Ano Bissexto
+        </h1>
+    </header>
+    <section>
+        <div>
+            Digite o ano e veja se ele é bissexto:
+        </div>
+        <div><input type="number" name="num" id="num"></div>
+        <div id="resu"></div>
+        <div>
+            <p><input type="button" value="Conferir" onclick="clicar()" id="btn"></p>
+        </div>
+    </section>
+    <footer><a href="https://github.com/nicolasgaldino">Galdino ᶜʳᶠ</a></footer>
+</body>
+<script>
+    function clicar(){
+        let conf = document.getElementById('btn')
+        let val = document.getElementById('num')
+        let res = document.getElementById('resu')
+        let tot = Number(val.value)
+        let resu = tot % 4
+        if (resu == 0) {
+            res.innerHTML = `${tot} é um ano bissexto!`
+        } else {
+            res.innerHTML = `${tot} não é um ano bissexto!`
+        }
+    }
+</script>
+</html>
